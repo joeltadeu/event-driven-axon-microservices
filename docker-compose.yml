@@ -1,6 +1,18 @@
 version: '3.7'
 services:
 
+  axonserver:
+    image: axoniq/axonserver
+    hostname: axonserver
+    volumes:
+      - axonserver-data:/data
+      - axonserver-events:/eventdata
+      - axonserver-config:/config:ro
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+      - '8224:8224'
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
     container_name: service-elasticsearch
@@ -60,7 +72,7 @@ services:
       - elasticsearch
 
   discovery:
-    image: lmgm/discovery-service
+    image: edm/discovery-service
     container_name: discovery-service
     build:
       context: ./discovery-service
@@ -73,7 +85,7 @@ services:
       - logstash
 
   gateway:
-    image: lmgm/api-gateway-service
+    image: edm/api-gateway-service
     container_name: api-gateway-service
     build:
       context: ./api-gateway-service
@@ -85,11 +97,11 @@ services:
       - logstash
       - zipkin
 
-  books:
-    image: lmgm/books-service-api
-    container_name: books-service
+  orders:
+    image: edm/orders-service-api
+    container_name: orders-service
     build:
-      context: ./books-service
+      context: ./orders-service
       dockerfile: Dockerfile
     ports:
       - "7500:7500"
@@ -98,30 +110,44 @@ services:
       - logstash
       - zipkin
 
-  orders:
-    image: lmgm/orders-service-api
-    container_name: orders-service
+  payments:
+    image: edm/payments-service-api
+    container_name: payments-service
     build:
-      context: ./orders-service
+      context: ./payments-service
       dockerfile: Dockerfile
     ports:
       - "7501:7501"
     depends_on:
       - discovery
-      - books
     links:
       - discovery
       - logstash
       - zipkin
 
-  params:
-    image: lmgm/params-service-api
-    container_name: params-service
+  products:
+    image: edm/products-service-api
+    container_name: products-service
     build:
-      context: ./params-service
+      context: ./products-service
       dockerfile: Dockerfile
     ports:
     - "7502:7502"
+    depends_on:
+      - discovery
+    links:
+      - discovery
+      - logstash
+      - zipkin
+
+  users:
+    image: edm/users-service-api
+    container_name: users-service
+    build:
+      context: ./users-service
+      dockerfile: Dockerfile
+    ports:
+      - "7503:7503"
     depends_on:
       - discovery
     links:
@@ -151,3 +177,6 @@ services:
     ports:
       - 3000:3000
     user: "104"
+
+
+

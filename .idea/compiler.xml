@@ -7,24 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="edm-core" />
-        <module name="edm-product-service" />
-        <module name="edm-user-service" />
+        <module name="orders-service" />
+        <module name="products-service" />
         <module name="edm-api-gateway" />
-        <module name="edm-order-service" />
-        <module name="edm-payment-service" />
-        <module name="edm-discovery-server" />
+        <module name="users-service" />
+        <module name="discovery-service" />
+        <module name="payments-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="discovery-service" options="-parameters" />
       <module name="edm-api-gateway" options="-parameters" />
       <module name="edm-core" options="-parameters" />
-      <module name="edm-discovery-server" options="-parameters" />
-      <module name="edm-order-service" options="-parameters" />
-      <module name="edm-payment-service" options="-parameters" />
-      <module name="edm-product-service" options="-parameters" />
-      <module name="edm-user-service" options="-parameters" />
+      <module name="orders-service" options="-parameters" />
+      <module name="payments-service" options="-parameters" />
+      <module name="products-service" options="-parameters" />
+      <module name="users-service" options="-parameters" />
     </option>
   </component>
 </project>

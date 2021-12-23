@@ -32,13 +32,13 @@
     </properties>
 
     <modules>
-        <module>edm-api-gateway</module>
-        <module>edm-discovery-server</module>
+        <module>api-gateway-service</module>
+        <module>discovery-service</module>
         <module>edm-core</module>
-        <module>edm-order-service</module>
-        <module>edm-payment-service</module>
-        <module>edm-product-service</module>
-        <module>edm-user-service</module>
+        <module>orders-service</module>
+        <module>payments-service</module>
+        <module>products-service</module>
+        <module>users-service</module>
     </modules>
 
     <dependencies>

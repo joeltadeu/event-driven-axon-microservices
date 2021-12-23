@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/edm-api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-gateway-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/discovery-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/edm-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/edm-discovery-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/edm-order-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/edm-payment-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/edm-product-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/edm-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orders-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payments-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/products-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/users-service/src/main/java" charset="UTF-8" />
   </component>
 </project>
